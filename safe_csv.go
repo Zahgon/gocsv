@@ -17,22 +17,10 @@ type SafeCSVWriter struct {
 	m sync.Mutex
 }
 
-func NewSafeCSVWriter(original *csv.Writer) *SafeCSVWriter {
-	return &SafeCSVWriter{
-		Writer: original,
-	}
-}
+func NewSafeCSVWriter(original *csv.Writer) *SafeCSVWriter { _ = "STUB: not implemented"; return nil }
 
-//Override write
-func (w *SafeCSVWriter) Write(row []string) error {
-	w.m.Lock()
-	defer w.m.Unlock()
-	return w.Writer.Write(row)
-}
+// Override write
+func (w *SafeCSVWriter) Write(row []string) error { _ = "STUB: not implemented"; return nil }
 
-//Override flush
-func (w *SafeCSVWriter) Flush() {
-	w.m.Lock()
-	w.Writer.Flush()
-	w.m.Unlock()
-}
+// Override flush
+func (w *SafeCSVWriter) Flush() { _ = "STUB: not implemented"; return }
